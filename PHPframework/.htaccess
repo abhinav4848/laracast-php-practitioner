@@ -1,0 +1,27 @@
+RewriteEngine On
+
+#RewriteBase /learn/php/classes/refactoring/
+#RewriteRule ^.*$ index_unified.php [END]
+
+RewiteBase /
+RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+RewriteRule ^.*$ index.php [END]
+
+# RewriteBase examples
+# https://stackoverflow.com/a/21348047/2365231
+
+# If you write RewriteBase /whatever, then url in the browser will stay the same, but content of the page will change to the file at the location 
+# referred by rewritebase (which defines the path wrt to domain url). If file does not exist there, then 404 error.
+
+# RewriteRule /index.php is absolute path wrt domain url (ie. $_SERVER[HTTP_HOST])
+
+# RewriteRule index.php is relative path wrt RewriteBase
+
+##################
+
+# In the above use case, we see the RewriteBase mention a url as /learn/php/classes/refactoring/ 
+# and this htaccess is also located in the same directory.
+# So when I visit the location of this htaccess and add anything extra to the url, everything always goes to RewriteRule (index.php) located at the RewiteBase, 
+# i.e. if RewriteBase was /learn/php/classes/, then everything would go to the index.php at that folder.
+# so index.php reads the full url via $_SERVER['REQUEST_URI'], chops off /learn/php/classes/refactoring/ and forwards the rest to be interpreted by the router
+# 
