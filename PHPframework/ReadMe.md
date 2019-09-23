@@ -2,7 +2,7 @@
 Attempt at making a simple PHP framework like Laravel.
 
 ## Start
-Int he terminal, go to the `PHPframework` and run
+In the terminal, go to the `PHPframework` and run
 ```bash
 # for the first time
 composer install
