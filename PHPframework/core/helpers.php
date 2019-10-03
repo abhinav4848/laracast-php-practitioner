@@ -5,7 +5,7 @@
  * @param  string $name
  * @param  array  $data
  */
-//helper function
+//helper function used by controllers
 function view($name, $data=[])
 {
     //convert ['name'=>'Joe', 'age'=>25] to $name = 'Joe, $age=25;
