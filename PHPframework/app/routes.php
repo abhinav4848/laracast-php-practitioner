@@ -8,4 +8,4 @@ $router->get('contact', 'PagesController@contact');
 $router->get('users', 'UsersController@index');
 $router->post('names', 'UsersController@store');
 
-// var_dump($router->routes);
+// dd($router->routes);

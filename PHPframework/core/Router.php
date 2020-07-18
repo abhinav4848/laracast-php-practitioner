@@ -13,6 +13,8 @@ class Router
 
     public static function load($file)
     {
+        // Routes file uses the $router static method to access get() and post()
+        // which then help populate the protected routes array above
         $router = new static;
         require $file;
         return $router;
